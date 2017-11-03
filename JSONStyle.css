@@ -1,0 +1,17 @@
+input[type="text"]{
+    
+   border-style: double;
+}
+
+input[type="button"]{
+   border-style: double;
+}
+
+input[type="button"]:hover {
+    background-color: #4CAF50; 
+    color: white;
+}
+
+input[type="text"], [type="number"]{
+  width:100%;
+}
