@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Strings 4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <input type="text" id="strings4">
+        <input type="button" onClick="getStrings4()" value="Run Strings4">
+
+        <!-- Printing 0 for length of string -->
+        <script>
+            function getStrings4() {
+                let stringToUse = document.getElementById("strings4").value;
+                runStrings4(stringToUse);
+            }
+
+            function runStrings4(stringToUse) {
+                let counter = 0;
+                let length = stringToUse.length;
+                for (let j = 0; j < length; j++) {
+                    if ((stringToUse[j] === stringToUse[j + 1]) && (stringToUse[j] === stringToUse[j + 2])) {
+                        counter = +counter + 1;
+                    }
+                }
+                document.write(counter);
+            }
+  
+
+
+        </script>
+    </body>
+</html>

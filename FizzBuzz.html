@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FizzBuzz</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <script>
+            //Check if fizz value
+            function checkDiv3(checkNum){
+                return checkNum%3 ===0;
+            }
+            //Check if buzz value
+            function checkDiv5(checkNum){
+                return checkNum%5 ===0;
+            }
+            //Retrieve user input and pass to actual fizzBuzz function
+            function getFizzBuzz(){
+                let num = parseInt(document.getElementById("num").value);
+                let string1 = document.getElementById("string1").value;
+                let string2 = document.getElementById("string2").value;
+                fizzBuzz(num,string1,string2);
+            }
+            
+            //For the number the user has input, run fizzBuzz with the new words selected
+            function fizzBuzz(numForLoop, stringFor3, stringFor5){
+                for(let i = 1; i<=numForLoop;i++){
+                    if(checkDiv3(i) && checkDiv5(i)){
+                        
+                        document.write("<br>" + i + stringFor3 + stringFor5+ "<br>");
+                    }
+                    else if(checkDiv3(i)){
+                        
+                        document.write("<br>" + i + "-->" + stringFor3);
+                    }
+                    else if(checkDiv5(i)){
+                        
+                        document.write("<br>" +i + "-->" +stringFor5);
+                    }
+                    else{
+                        
+                        document.write("<br>" +i+ "-->");
+                    }
+                }
+            }
+            
+            
+            
+            
+            
+        </script>
+        
+        <!--Get user input to use -->
+        <input type="number" id="num">
+        <input type="text" id="string1">
+        <input type="text" id="string2">
+        <input type="button" onClick="getFizzBuzz()" value="Run FizzBuzz">
+        
+    </body>
+</html>

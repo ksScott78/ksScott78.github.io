@@ -1,0 +1,48 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    
+<script type = "text/javascript">
+
+let requestURL = "https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json";
+let request = new XMLHttpRequest();
+request.open("GET", requestURL);
+request.responseType = "json";
+request.send();
+request.onload = function() {
+let requestData = request.response;
+let myH1 = document.createElement("h1");
+myH1.textContent = requestData["squadName"];
+document.getElementsByTagName("body")[0].appendChild(myH1);
+    
+    
+    for (let key in requestData) {
+         if(Array.isArray(requestData[key])){ 
+             //Set members array to look at
+              let dataMembers = requestData[key];
+              //for each tag of a superhero set the key to retrieve value for   
+              for(let key1 in dataMembers){
+                    console.log("Member:")
+                      let dataMembers1 = dataMembers[key1];
+                      //for each element of a key list the values
+                      for(let key2 in dataMembers1){
+                          console.log(key2 + " --> "  + dataMembers1[key2]);
+                      }
+                  }
+            }
+      else{ console.log(key+": "+ requestData[key]); }
+    }
+}
+</script>
+
+
+
+</body>
+
+
+
+
+</html>

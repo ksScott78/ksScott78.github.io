@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Iteration4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <input type="number" id="raceNumber">
+        <input type="button" onClick="raceTo1()" value="Run Iterations4">
+        
+        <script type="text/javascript">
+
+            function raceTo1() {
+                let numToUse = parseInt(document.getElementById("raceNumber").value);
+                iterations4(numToUse);
+            }
+
+            function isDiv3(n) {
+                return ((n % 3) === 0);
+            }
+
+            function iterations4(num) {
+                let counter = 0;
+                let op1 = "added 1 here";
+                let op2 = "minus 1 here";
+                let op3 = "divided by 3 here";
+                document.write(num + "<br>");
+                while (num > 1) {
+                    //Check for 2 so we can print it correctly
+                    if (num === 2) {
+                        num = 1;
+                        counter++;
+                        document.write(num +"--> " + op2);
+                        //If its div by 3 then do that and set num.
+                    } else if (isDiv3(num)) {
+                       
+                        num = num / 3;
+                         counter++;
+                        document.write(num + "--> " + op3 + "<br>");
+                        //else create new let to store value to inspect
+                    } else {
+                        let tempNum = num - 1;
+                           //check temp value
+                        if (isDiv3(tempNum)) {
+                            
+                            num = num - 1;
+                            counter++;
+                            document.write(num + "--> " + op2 + "<br>");
+                            num = num / 3;
+                            counter++;
+                            document.write(num + "--> " + op3 + "<br>");
+                            //else must be divisble by 3 if we add 1
+                        } else {
+                            num = num + 1;
+                             counter++;
+                            document.write(num + "--> " + op1 + "<br>");
+                            num = num / 3;
+                             counter++;
+                            document.write(num + "--> " + op3 + "<br>"); 
+                        }
+                    }
+                }
+                document.write("<br>" + "Number of Iterations to reach end:" + counter);
+            }
+        </script>
+    </body>
+</html>

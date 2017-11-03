@@ -1,0 +1,121 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    
+<script type = "text/javascript">
+
+function square(){
+    var sNum = document.getElementById("squareNum").value;
+    alert(sNum*sNum);
+}
+function sum3(){
+   var num1 = +document.getElementById("number1").value;
+    var num2 = +document.getElementById("number2").value;
+     var num3 = +document.getElementById("number3").value;
+     var sum = num1+num2+num3;
+     alert(sum);
+}
+
+function getDetails(){
+   var name = document.getElementById("name").value;
+    var age = document.getElementById("age").value;
+    var occupation = document.getElementById("occupation").value;
+    
+    createPerson(name,age,occupation);
+
+}
+
+function createPerson(nameIn,ageIn,occupationIn){
+    var person = {
+        name: nameIn,
+        age: ageIn,
+        occupation: occupationIn
+    };
+
+    alert(person.name + " is " + person.age + " and is a " + person.occupation);
+}
+function alterPersonAndDisplay(){
+    var newAge = document.getElementById("newAge").value;
+    var person ={
+        name:person.name,
+        age:newAge,
+        occupation:person.occupation
+    };
+    alert(person.name + " is now" + person.age + " and is still a" + person.occupation);
+}
+
+
+//Strings 1 & 2
+var appendNum = 4;
+var weirdString = "\" He said \"My name is Elliott \"  \" " + appendNum;
+
+console.log(weirdString);
+console.log(weirdString.toUpperCase());
+
+
+
+//Arrays 1/Strings 3
+var listOfStuff = ['eggs', 'chicken', 'peas'];
+console.log(listOfStuff);
+listOfStuff[listOfStuff.length] = 'pork';
+console.log(listOfStuff);
+listOfStuff.pop();
+console.log(listOfStuff);
+
+//Dummy variable for conditionals execise below
+var dummyperson = {
+    name: "jon",
+    age: 19, 
+    occupation: "chef"
+};
+
+//Conditionals 1
+if(dummyperson.age >= 20 && dummyperson.age <= 40){
+    console.log("True, this person is between 20 and 40");
+}
+else{
+    console.log("False, this person is not between 20 and 40");
+}
+
+//Iteration 1 & 2
+for( i = 0; i<10; i++){
+    if(i>0 && i%2===0){
+    console.log(i);
+    }
+}
+
+</script>
+
+<!-- Creating person object to output-->
+ <input type = "text" id = "name" value = "Enter Name">
+Age:<input type = "number" id = "age">
+<input type = "text" id = "occupation" value= "Enter Occupation">
+<input type = "button" onClick ="getDetails()" value = "Create Person">
+<br>
+<br>
+<input type = "number" id = "newAge">
+<input type = "button" onClick = "alterPersonAndDisplay()" value = "Update Age">
+<br> 
+<br> 
+
+
+
+
+<!-- Sum testing 
+<input type = "number" id = "number1">
+<input type = "number" id = "number2">
+<input type = "number" id = "number3">
+<input type = "button" onClick = "sum3()" value = "Sum Numbers">
+<br><br>-->
+
+<!--Square testing 
+<input type = "number" id = "squareNum">
+<input type = "button" onClick = "square()" value = "Sqaure Number"> 
+-->
+</body>
+
+</html>

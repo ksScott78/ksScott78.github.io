@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Basic Problems</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script type="text/javascript">
+                
+        function getPersonValues(){
+             n = document.getElementById("name").value;
+             a = document.getElementById("age").value;
+             o = document.getElementById("occupation").value;
+             createPerson(n,a,o);
+        }
+        
+        function createPerson(n,a,o){
+            var Person = {
+                name: n,
+                age: a,
+                occupation : o
+            };
+            checkAge();
+          console.log("Name:" + Person.name + " Age:" + Person.age + " Occupation:" + Person.occupation);
+        }
+        
+        function getNewPersonDetails(){
+            nNew = document.getElementById("newName").value;
+             aNew = document.getElementById("newAge").value;
+              oNew = document.getElementById("newOccupation").value;
+             updatePerson(nNew,aNew,oNew);
+    }
+        
+        function updatePerson(n,a,o){
+                var Person ={
+                    name:n,
+                    age:a,
+                    occupation:o
+                };
+                console.clear();
+                checkAge();
+                console.log("Name:" + Person.name + " Age:" + Person.age + " Occupation:" + Person.occupation);
+                    }
+        function weirdString(){
+            var weirdOutput = " \" My name is Elliott\" "
+            console.log(weirdOutput);
+        }            
+        
+        function checkAge(){
+            if(Person.age>=20 && Person.age<=40)
+                alert("true")
+            else{
+                alert("false")
+            }
+        }
+        
+        </script>
+        Create A New Person!<br>
+        <input type="text" id="name" placeholder="Enter persons name...">
+        Persons Age:<input type="number" id="age">
+        <input type="text" id="occupation" placeholder="Enter job title...">
+        <input type ="button" onClick="getPersonValues()" value="Create new Person Object">
+        <br>
+        <br>
+        Update Created Person! <br>
+        <input type="text" id="newName" placeholder="Enter persons name...">
+        Persons Age:<input type="number" id="newAge">
+        <input type="text" id="newOccupation" placeholder="Enter job title...">
+        <input type ="button" onClick="getNewPersonDetails()" value="Create new Person Object">
+         </body>
+</html>
+
+
+
+<!--    //Variables
+    var word = "Gomenasai";
+    
+    alert(word);
+    console.log(word);
+    document.write(word);
+-->        
+
+
+<!--    //Functions 1
+        var num = 5;    
+        function squareNum(num){
+            console.log(num*num);
+        }
+        
+        squareNum(num);
+-->
+
+<!--    //Functions 2
+            
+            var num1 = 1;
+            var num2 = 2;
+            var num3 = 3;
+            
+            function sum3(num1,num2,num3){
+                console.log(num1+num2+num3);
+            }
+            
+            sum3(num1,num2,num3);
+-->
+
+
+<!--     //Variables 2
+            
+            var Person = {
+                name: "John",
+                age: 24,
+                occupation: "Driver"
+            };
+            
+            console.log("Name:" + Person.name + " Age:" + Person.age + " Occupation:" + Person.occupation);
+        
+-->
+
+<!--        //Events 1
+           
+             function getAge(){
+               var num = document.getElementById("newAge").value;
+               Person.age = num;
+           }
+           
+            
+           var Person = {
+                name: "John",
+                age: 24,
+                occupation: "Driver"
+            }; 
+        
+            function seeNewPerson(){
+                console.log("Name:" + Person.name + " Age:" + Person.age + " Occupation:" + Person.occupation);
+            }
+
+        <input type="number" id="newAge">
+        <input type="button" onClick="getAge()" value="Change Persons Age">
+        <input type="button" onClick="seeNewPerson()" value="See change age">
+        
+-->

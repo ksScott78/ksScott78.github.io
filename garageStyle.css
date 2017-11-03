@@ -1,0 +1,72 @@
+
+#header{
+  position:absolute;
+  left:10%;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+input[type="button"] {
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    width: 100%;
+}
+
+input[type="button"]:hover {
+    background-color: #4CAF50; 
+    color: white;
+}
+
+input[type="text"], [type="number"]{
+  width:100%;
+}
+
+#carDetails{
+  position:absolute;
+  height:25%;
+  top:50%;
+  border-style: double;
+  left:10%;
+  overflow: scroll;
+  width:30%;
+}
+
+#showCars{
+  font-size:140%; 
+  text-align: left;
+  border-style: double;
+  height: 25%;
+  position: absolute;
+  width:30%;
+  margin:auto;
+  overflow: scroll;
+  top: 10%;
+  left:10%;
+}
+
+#addingForm{
+  position: absolute;
+  left:50%;
+  top:36%;
+   border-style: double;
+   width:30%;
+}
+
+#garageOperations{
+  position: absolute;
+  left:50%;
+  top:50%;
+   border-style: double;
+   width:30%;
+
+}
+
+#addCar{
+   position:absolute;
+   top:78%;
+   left:10%;
+   width:30%;
+   height:20%;
+}

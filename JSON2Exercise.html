@@ -1,0 +1,64 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <p id="tableTest"></p>
+    <script type="text/javascript">
+        function searchKingFile() {
+            let searchTerm = document.getElementById("kingValue").value;
+            let requestURL = "https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json";
+            let request = new XMLHttpRequest();
+            request.open("GET", requestURL);
+            request.responseType = "json";
+            request.send();
+            request.onload = function () {
+                let requestData = request.response;
+                let myH1 = document.createElement("h1");
+                myH1.textContent = requestData["nm"];
+                document.getElementsByTagName("body")[0].appendChild(myH1);
+                let txt = "";
+                txt += "<table border='1'>";
+
+                for (let key in requestData) {
+
+                    let dataMembers = requestData[key];
+                    for (let key1 in dataMembers) {
+
+                        let stringToInspect = dataMembers[key1];
+                        if (stringToInspect.toLowerCase().includes(searchTerm.toLowerCase())) {
+                            for (let key1 in dataMembers) {
+
+                                console.log(key1 + "-->" + dataMembers[key1]);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    </script>
+    <input type="text" id="kingValue">
+    <input type="button" onClick="searchKingFile()" value="Search Kings">
+    <input type="button" onClick="console.clear()" value="Clear Search">
+
+
+</body>
+
+
+
+
+</html>
+
+<!--
+Table Stuff
+
+ txt += "</table>"
+         document.getElementById("tableTest").innerHTML = txt;
+
+ txt += "<tr><td>" + dataMembers[key1] + "</td></tr>";
+
+ txt += "<tr><th>" + key1 + "</th> </tr>"
+
+ -->

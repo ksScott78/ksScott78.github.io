@@ -1,0 +1,33 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+function createPara(){
+    var para = document.createElement("p");
+    para.setAttribute("id", "paraCreated")
+    var node = document.createTextNode(document.getElementById("newText").value);
+    para.appendChild(node);
+    var element = document.getElementById("div1");
+    element.appendChild(para);
+}
+
+function deletePara(){
+    var para1 = document.getElementById("paraCreated");
+    para1.parentNode.removeChild(para1);
+}
+
+
+
+</script>
+
+
+<input type="text" id= "newText">
+<input type="button" onClick="createPara()" value="create paragraph">
+<input type="button" onClick="deletePara()" value="delete paragraph">
+
+<div id="div1">
+
+</div>
+</body>
+</html>

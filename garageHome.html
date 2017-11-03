@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>Garage Home</title>
+    <script src="garageScript.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="garageStyle.css">
+</head>
+
+<body>
+    <div id="container">
+       <div id="header">
+        <h1>GARAGE PROJECT </h1>
+       </div>
+        <div id="showCars">
+         Current Garage:
+        </div>
+        <div id="carDetails">
+            REGISTRATION:<input type="text" id="carReg"> <br> 
+            MAKE: <input type="text" id="carMake"> <br>
+            YEAR: <input type="number" id="yearMade"> <br>
+            ENGINE SIZE:<input type="number" id="engineSize"><br>
+            FAULTS:
+            <div id="faults">
+            </div> 
+            </div>
+        <div id="addingForm">
+            <input type="button" onClick="addFault()" value="Add Fault"><br>
+            <input type="button" onClick="removeFault()" value="Remove Fault"><br> 
+            <input type="button" onClick="removeCar()" value="Remove car by inputted registration"><br>
+            <input type="button" onClick="clearGarage()" value="Empty Garage"><br> 
+            <input type="button" onClick="findCost()" value="Find Cost"><br>
+        </div>
+
+        <div id="garageOperations">
+             REMOVE CAR:<input type="text" id="idToRemove" placeholder="Remove by Registration"> <br>
+            CALCULATE REPAIR COST: <input type="text" id="carToCost" placeholder="Enter registration to cost">
+        </div>
+
+        <div id="addCar">
+             <input type="button" onClick="getCarToAdd()" value="Add to garage"> <br>
+        </div>
+    
+
+
+
+
+
+
+</body>
+
+</html>
